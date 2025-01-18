@@ -1,0 +1,480 @@
+/* style.css */
+body {
+  font-family: "Poppins", sans-serif, Arial;
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+  background: #f4f4f4;
+  font-size: 1rem; /* Base font size */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+header {
+  background: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+
+nav a:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+  transform: scaleX(0);
+}
+
+nav a:hover:after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+#hero {
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  padding: 6rem 0; /* Reduced padding */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh; /* Adjusted min-height */
+  position: relative;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  gap: 2rem; /* Added gap for spacing */
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 400px; /* Reduced image size */
+  height: auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  padding: 0.8rem 2rem; /* Adjusted padding */
+  margin: 0 0.5rem; /* Adjusted margin */
+  text-decoration: none;
+  border-radius: 8px; /* Added border radius */
+  transition: background-color 0.3s, transform 0.3s; /* Added transform to transition */
+  font-weight: 500;
+  border: none; /* Removed default border */
+}
+
+.btn.primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.section {
+  padding: 5rem 0; /* Adjusted padding */
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem; /* Adjusted margin */
+  font-size: 2.2rem; /* Adjusted font size */
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Adjusted minmax */
+  gap: 2rem; /* Adjusted gap */
+}
+
+.feature {
+  padding: 1.5rem; /* Added padding */
+  border: 1px solid #ddd; /* Added border */
+  border-radius: 8px; /* Added border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Added subtle shadow */
+}
+
+.feature h3 {
+  margin-top: 0; /* Removed default top margin */
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+
+  .hero-container {
+    flex-direction: column;
+  }
+
+  .hero-image {
+    margin-top: 2rem;
+  }
+
+  .hero-image img {
+    max-width: 300px; /* Further reduced size on smaller screens */
+  }
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Additional Styling */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Added gap */
+}
+
+.social-links a {
+  display: inline-block; /* For consistent sizing */
+}
+
+.social-links img {
+  width: 40px; /* Adjust as needed */
+  height: auto;
+}
+
+/* ... your existing CSS ... */
+
+#about {
+  padding: 5rem 0;
+}
+
+#about .container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* First column smaller, second column larger */
+  gap: 2rem 4rem;
+  max-width: 1100px;
+}
+
+#about .intro-section {
+  grid-column: span 1;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem; /* Reduced margin */
+  text-align: left;
+}
+
+#about .intro-text {
+  margin-bottom: 2rem; /* Added margin for spacing */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#about .info-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout for the text blocks */
+  gap: 2rem;
+  grid-column: 2;
+}
+
+#about h3 {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+#about p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Additional stylings */
+#about a {
+  color: #007bff; /* Or your preferred link color */
+  text-decoration: none;
+}
+
+#about a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #about .container {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+
+  #about .info-grid {
+    grid-column: 1; /* Reset to the first column */
+  }
+  #about .intro-section {
+    grid-column: span 1;
+  }
+}
+
+/* ... your existing CSS ... */
+
+#roadmap {
+  padding: 5rem 0;
+}
+
+#roadmap .container {
+  max-width: 1200px;
+}
+
+#roadmap h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column; /* Changed to vertical */
+  gap: 2rem;
+  position: relative;
+}
+/* Add this after the .timeline style */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25px; /* Adjust as needed for icon size */
+  width: 4px;
+  height: 100%;
+  background-color: #007bff; /* Adjust color as needed */
+}
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.timeline-icon {
+  background-color: #fff;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.timeline-icon img {
+  width: 32px;
+  height: auto;
+}
+
+.timeline-content {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column; /* Stack items vertically */
+  }
+}
+
+/* ... your existing CSS ... */
+
+#tokenomics {
+  padding: 5rem 0;
+}
+
+#tokenomics .container {
+  max-width: 1100px;
+}
+
+#tokenomics h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.token-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.stat-item {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  flex-basis: 28%;
+}
+
+.stat-item h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.allocation-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.allocation-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.bar-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bar {
+  height: 30px;
+  border-radius: 5px;
+}
+.allocation-section .bar-label {
+  min-width: 150px; /* Adjust as needed */
+}
+.allocation-text {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.allocation-text h3 {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.allocation-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.allocation-text li {
+  margin-bottom: 1rem;
+}
+
+.allocation-text li p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .token-stats {
+    flex-direction: column; /* Stack on smaller screens */
+    align-items: center;
+  }
+  .allocation-section {
+    grid-template-columns: 1fr;
+  }
+}
